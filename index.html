@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Galería Responsive</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <button id="abrir-menu">☰</button>
+            <nav id="menu">
+                <button id="cerrar-menu">✖</button>
+                <a href="#">Inicio</a>
+                <a href="#">Galería</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Galería de Imágenes</h1>
+            <div class="galeria">
+                <figure>
+                    <img src="https://picsum.photos/200" alt="Imagen 1">
+                    <figcaption>Imagen 1</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://picsum.photos/210" alt="Imagen 2">
+                    <figcaption>Imagen 2</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://picsum.photos/200" alt="Imagen 3">
+                    <figcaption>Imagen 3</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://picsum.photos/210" alt="Imagen 4">
+                    <figcaption>Imagen 4</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://picsum.photos/200" alt="Imagen 5">
+                    <figcaption>Imagen 5</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://picsum.photos/210" alt="Imagen 6">
+                    <figcaption>Imagen 6</figcaption>
+                </figure>
+            </div>
+        </main>
+
+        <section>
+            <h2>Formulario</h2>
+            <form action="">
+                <p>
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre"><br>
+                </p>
+                <p>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="Email"><br>
+                </p>
+                <p>
+                    <label for="textarea">Textarea:</label><br>
+                    <textarea placeholder="area de texto" rows="10" cols="25"></textarea>
+                </p>
+                <p>
+                    <input type="submit" value="Enviar">
+                </p>
+
+            </form>
+        </section>
+
+        <footer>
+            <div class="footer-bottom">
+                <p>© UNTITLED. ALL RIGHTS RESERVEDS. | PHOTOS BY ALVARO | DESIGN BY ALVARO.</p>
+            </div>
+        </footer>
+
+        <script>
+            const abrirMenu = document.getElementById("abrir-menu");
+            const cerrarMenu = document.getElementById("cerrar-menu");
+            const menu = document.getElementById("menu");
+
+            abrirMenu.addEventListener("click", () => menu.classList.add("visible"));
+            cerrarMenu.addEventListener("click", () => menu.classList.remove("visible"));
+        </script>
+    </body>
+</html>
