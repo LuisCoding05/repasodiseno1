@@ -3,32 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería Responsive</title>
+    <title>galería de imagenes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <button id="abrir-menu">☰</button>
-        <nav id="menu">
-            <button id="cerrar-menu">✖</button>
-            <a href="#">Inicio</a>
-            <a href="#">Galería</a>
-            <a href="#">Contacto</a>
-        </nav>
-    </header>
+    <div id="contenedor">
+        <header>
+            <img src="Hotel_Maligno.png" id="logo" alt="logo no cargado" width="100" height="100">
+            <button id="abrir-menu">☰</button>
+            <nav id="menu">
+                <button id="cerrar-menu">✖</button>
+                <a href="#">Inicio</a>
+                <a href="#">¿Qué hacemos?</a>
+                <a href="#">Servicios</a>
+                <a href="#">Publicaciones</a>
+                <a href="#">Contáctanos</a>
+                
+            </nav>
+        </header>
 
-    <main>
-        <h1>Galería de Imágenes</h1>
-        <div class="galeria">
-            <div class="imagen"><img src="https://via.placeholder.com/200" alt="Imagen 1"></div>
-            <div class="imagen"><img src="https://via.placeholder.com/200" alt="Imagen 2"></div>
-            <div class="imagen"><img src="https://via.placeholder.com/200" alt="Imagen 3"></div>
-            <div class="imagen"><img src="https://via.placeholder.com/200" alt="Imagen 4"></div>
-            <div class="imagen"><img src="https://via.placeholder.com/200" alt="Imagen 5"></div>
-            <div class="imagen"><img src="https://via.placeholder.com/200" alt="Imagen 6"></div>
-        </div>
-    </main>
+        <main>
+            <h1>Galería de imágenes</h1>
+            <section id="galeria">
+                <figure>
+                    <img src="https://picsum.photos/150" alt="Imagen 1">
+                    <figcaption>Imagen 1</figcaption>
+                </figure>
 
+                <figure>
+                    <img src="https://picsum.photos/150" alt="Imagen 2">
+                    <figcaption>Imagen 2</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://picsum.photos/150" alt="Imagen 3">
+                    <figcaption>Imagen 3</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://picsum.photos/150" alt="Imagen 4">
+                    <figcaption>Imagen 4</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://picsum.photos/150" alt="Imagen 5">
+                    <figcaption>Imagen 5</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://picsum.photos/150" alt="Imagen 6">
+                    <figcaption>Imagen 6</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://picsum.photos/150" alt="Imagen 7">
+                    <figcaption>Imagen 7</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="https://picsum.photos/150" alt="Imagen 8">
+                    <figcaption>Imagen 8</figcaption>
+                </figure>
+
+            </section>
+        </main>
+
+        <aside>
+            <h2>Información adicional</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatibus necessitatibus illo alias sunt officiis, delectus obcaecati laudantium unde, deleniti sapiente quidem soluta, quisquam ex placeat porro. Vero, odit nisi.
+            Tempora, omnis quis vel laboriosam aliquid neque officia debitis id ipsum voluptates ipsam maiores voluptatibus perspiciatis, non, fugiat est! Nam eveniet nostrum voluptas nihil perferendis velit eligendi neque dolores ipsa.</p>
+        </aside>
+
+        <footer>
+            <h2>&copy; Luis Miguel Jiménez León 2024</h2>
+        </footer>
+        
+    </div>
     <script>
         const abrirMenu = document.getElementById("abrir-menu");
         const cerrarMenu = document.getElementById("cerrar-menu");

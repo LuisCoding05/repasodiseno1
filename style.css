@@ -1,0 +1,250 @@
+/* Definir variables globales */
+:root {
+    --color-header: rgb(71, 120, 224);
+    --color-footer: aquamarine;
+    --color-aside: chocolate;
+    --color-text: white;
+    --color-text-dark: rgb(53, 47, 33);
+    --gap: 20px;
+    --font-size-base: 1.2rem;
+    --font-size-large: 1.3rem;
+    --font-size-header: 3rem;
+    --font-size-main-title: 2rem;
+    --padding-base: 20px;
+    --border-radius: 20px;
+    --min-height-footer: 100px;
+    --min-width-gallery: 200px;
+}
+
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Estilos generales para el logo */
+#logo {
+    border-radius: var(--border-radius);
+}
+
+/* Estilos para el botón de menú */
+#abrir-menu, #cerrar-menu {
+    display: none;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: inherit;
+    border: none;
+    font-size: var(--font-size-large);
+    cursor: pointer;
+}
+
+/* Efectos hover en los botones de menú */
+#abrir-menu:hover {
+    background-color: rgb(100, 142, 233);
+}
+
+#cerrar-menu:hover{
+    background-color: rgb(50, 51, 54);
+}
+
+/* Contenedor principal con grid */
+#contenedor {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* El main ocupa 3 partes y el aside 1 */
+    grid-template-areas: 
+        "header header"
+        "main aside"
+        "footer footer";
+    grid-template-rows: auto;
+    min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+}
+
+/* Estilos del aside */
+aside {
+    grid-area: aside;
+    background-color: var(--color-aside);
+    color: var(--color-text);
+    padding: var(--padding-base);
+}
+
+/* Estilos para los encabezados dentro del aside */
+aside h2 {
+    border-bottom: 1px solid var(--color-text);
+}
+
+/* Estilo para los párrafos dentro del aside */
+aside p {
+    text-align: left;
+    line-height: 1.8;
+    font-size: var(--font-size-base);
+}
+
+/* Galería de imágenes con grid */
+#galeria {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(var(--min-width-gallery), 1fr)); /* Ajusta automáticamente el tamaño de las columnas */
+    gap: var(--gap);
+}
+
+/* Enlaces de la galería */
+a:link {
+    text-decoration: none;
+    color: var(--color-text-dark);
+}
+
+
+#galeria > figure > img {
+    display: block;
+}
+
+/* Estilo para los elementos de la galería */
+#galeria > figure {
+    padding: var(--padding-base);
+    border-radius: var(--border-radius);
+    border: 1px solid black;
+}
+
+/* Estilo para el main */
+main {
+    grid-area: main;
+    background-color: darkkhaki;
+    padding: var(--padding-base);
+}
+
+/* Estilo del título principal dentro del main */
+main > h1:nth-of-type(1) {
+    text-decoration: underline;
+    padding-bottom: var(--gap);
+}
+
+/* Estilos alternos para los elementos en la galería */
+#galeria > :nth-child(odd) {
+    background-color: rgb(199, 207, 200);
+}
+
+#galeria > :nth-child(even) {
+    background-color: rgb(69, 71, 70);
+}
+
+/* Imagenes dentro de la galería */
+#galeria > figure > :nth-child(1) {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+/* Figcaption dentro de las imágenes */
+#galeria > figure > figcaption:nth-of-type(1) {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    width: 100%;
+}
+
+/* Estilos de los enlaces visitados */
+a:visited {
+    text-decoration: none;
+    color: rgb(53, 47, 33);
+}
+
+/* Estilo para el header */
+header {
+    grid-area: header;
+    background-color: var(--color-header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-base);
+}
+
+/* Estilo del menú de navegación */
+nav {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    gap: var(--gap);
+}
+
+/* Estilo del footer */
+footer {
+    grid-area: footer;
+    display: flex;
+    background-color: var(--color-footer);
+    align-items: center;
+    justify-content: center;
+    min-height: var(--min-height-footer);
+}
+
+/* Estilo del título en el footer */
+footer > h2:nth-of-type(1) {
+    font-size: var(--font-size-header);
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    #contenedor {
+        grid-template-columns: 1fr; /* Solo una columna */
+        grid-template-areas: 
+            "header"
+            "main"
+            "aside"
+            "footer";
+    }
+
+    aside p {
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+}
+
+/* Media Query para pantallas muy pequeñas (por ejemplo, móviles) */
+@media (max-width: 600px) {
+    #abrir-menu {
+        display: block;
+    }
+
+    nav {
+        text-align: center;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 250px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    }
+
+    nav a:link, nav a:visited {
+        width: 100%;
+        padding: 10px;
+        font-size: var(--font-size-large);
+        color: var(--color-text);
+    }
+
+    nav a:hover {
+        background-color: rgb(49, 46, 46);
+    }
+
+    #cerrar-menu {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: var(--color-text);
+    }
+
+    .visible {
+        opacity: 1;
+        visibility: visible;
+    }
+}
