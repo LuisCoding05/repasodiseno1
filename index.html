@@ -3,31 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>galeria de imagenes</title>
+    <title>Galería Responsive</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <li>Inicio</li>
-            <li>¿Qué hacemos?</li>
-            <li>Servicios</li>
-            <li>Publicaciones</li>
-            <li>Contáctanos</li>
-            
+        <button id="abrir-menu">☰</button>
+        <nav id="menu">
+            <button id="cerrar-menu">✖</button>
+            <a href="#">Inicio</a>
+            <a href="#">Galería</a>
+            <a href="#">Contacto</a>
         </nav>
     </header>
 
     <main>
-        <section>
-            <figure>
-                <img src="" alt="">
-                <figcaption>Imagen 1</figcaption>
-            </figure>
-        </section>
+        <h1>Galería de Imágenes</h1>
+        <div class="galeria">
+            <div class="imagen"><img src="https://via.placeholder.com/200" alt="Imagen 1"></div>
+            <div class="imagen"><img src="https://via.placeholder.com/200" alt="Imagen 2"></div>
+            <div class="imagen"><img src="https://via.placeholder.com/200" alt="Imagen 3"></div>
+            <div class="imagen"><img src="https://via.placeholder.com/200" alt="Imagen 4"></div>
+            <div class="imagen"><img src="https://via.placeholder.com/200" alt="Imagen 5"></div>
+            <div class="imagen"><img src="https://via.placeholder.com/200" alt="Imagen 6"></div>
+        </div>
     </main>
 
-    <aside>
-        
-    </aside>
+    <script>
+        const abrirMenu = document.getElementById("abrir-menu");
+        const cerrarMenu = document.getElementById("cerrar-menu");
+        const menu = document.getElementById("menu");
+
+        abrirMenu.addEventListener("click", () => menu.classList.add("visible"));
+        cerrarMenu.addEventListener("click", () => menu.classList.remove("visible"));
+    </script>
 </body>
 </html>
